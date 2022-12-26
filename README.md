@@ -3,6 +3,11 @@
 Improve your retro gaming emulation experience by using the systems original controller.
 This project provides code so you can bring back to life your old controller with native plug-and-play support for Microsoft Windows 7+ and Linux/RetroPie using an ATmega32u4 based Arduino.
 
+This is the version 3.0 of the project 
+
+This project currently includes support for:
+* 
+
 ### Further Information:
 
 Commodore 64/Amiga, Atari 2600/XL/ST, ZX Spectrum, Amstrad CPC, MSX and many others compatible Joystick to USB - 

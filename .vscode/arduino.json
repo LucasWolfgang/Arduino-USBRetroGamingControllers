@@ -1,5 +1,5 @@
 {
     "board": "arduino:avr:leonardo",
-    "sketch": "GamePad_NESClone_DB9/GamePad_NESClone_DB9.ino",
+    "sketch": "gp_snes/gp_snes.ino",
     "port": "/dev/ttyACM0"
 }

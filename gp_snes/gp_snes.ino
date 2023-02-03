@@ -1,30 +1,44 @@
-/*
-* Auth: John Milner / jfrmilner
-* Version: 2.0.1
-* 
-* Hardware
-*  - ATmega32u4 based Arduino (Arduino Leonardo/Micro)
-*  - Super Nintendo Entertainment System Controller
-* Software
-*  - Arduino Joystick Library 1.0.1 - https://github.com/MHeironimus/ArduinoJoystickLibrary
-* 
-*	      +---------> Clock                 
-*	      | +-------> Latch                 
-*	      | | +-----> Data                  
-*	      | | |                             
-*    _____________                   
-*  5 \ x o o o x / 1                 
-*     \ x o x o /                    
-*    9 `~~~~~~~' 6                   
-*	       |   |                            
-*	       |   +----> Power                 
-*	       +--------> Ground
-*/
+/* Super Nintendo Entertainment System (SNES) Controller/Gamepad to USB
+ * Auth: John Milner / jfrmilner
+ * Blog Post URL: https://jfrmilner.wordpress.com/2016/07/17/arduino-project-super-nintendo-entertainment-system-snes-controllergamepad-to-windowslinux-retropie-usb/
+ * 
+ * Version
+ * 1.0
+ * 
+ * Date
+ * July 2016
+ * 
+ * Hardware
+ * ATmega32u4 based Arduino (Arduino Leonardo/Micro)
+ * Super Nintendo Entertainment System Controller
+ *  
+ * Software
+ * Arduino IDE 1.6.8
+ * Arduino Joystick Library 1.0.1 - https://github.com/MHeironimus/ArduinoJoystickLibrary
+ *  
+ * Works with..  
+ * OS (plug and play): Windows 10 / Linux RetroPie 3.8.1
+ * Snes9x (SNES Emulator) - http://www.snes9x.com/ / https://tcrf.net/SNES_Test_Program
+ * 
+ * Pinout - http://pinoutsguide.com/Game/snescontroller_pinout.shtml
+ * 
+ * 7 pin SNES proprietary female connector view:
+ *  -----------------\
+ * | 1 2 3 4 | 5 6 7 | 
+ *  -----------------/
+ * pin 1: +5v
+ * pin 2: Data Clock
+ * pin 3: Data Latch
+ * pin 4: Serial Data
+ * pin 5: No Connection
+ * pin 6: No Connection
+ * pin 7: Ground
+ * 
+ */
 
 #include <Joystick.h>
 
-Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID, JOYSTICK_TYPE_GAMEPAD, 12, 1, true,
-                   true, false, false, false, false, false, false, false, false, false);
+Joystick_ Joystick;
 
 // Controller Buttons
 #define SNES_B       1      //000000000001
@@ -45,17 +59,16 @@ const int PIN_LATCH = 7;
 const int PIN_DATA = 12;
 
 void setup(){
-    Joystick.begin(false);
-    
-    pinMode(PIN_CLOCK, OUTPUT);
-    digitalWrite(PIN_CLOCK, HIGH);
-    pinMode(PIN_LATCH, OUTPUT);
-    digitalWrite(PIN_LATCH, LOW);
-    pinMode(PIN_DATA, INPUT_PULLUP);
+  Joystick.begin(false);
+  pinMode(PIN_CLOCK, OUTPUT);
+  digitalWrite(PIN_CLOCK, HIGH);
+  pinMode(PIN_LATCH, OUTPUT);
+  digitalWrite(PIN_LATCH, LOW);
+  pinMode(PIN_DATA, INPUT_PULLUP);
 }
 
 void loop(){
-    uint16_t state = 0;
+  uint16_t state = 0;
     // 12us latch
     digitalWrite(PIN_LATCH, HIGH);
     delayMicroseconds(12);

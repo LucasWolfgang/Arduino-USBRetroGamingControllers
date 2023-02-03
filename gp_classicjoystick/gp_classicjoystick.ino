@@ -55,13 +55,13 @@ void setup()
   pinMode(JOY_BUTTON, INPUT_PULLUP);  
 
   // Initialize Joystick Library
-  Joystick.begin(false);
+  Joystick_.begin(false);
 }
 
 void loop() 
 {
   // button
-  !digitalRead(JOY_BUTTON) ? Joystick.pressButton(0) : Joystick.releaseButton(0);
+  !digitalRead(JOY_BUTTON) ? Joystick_.pressButton(0) : Joystick_.releaseButton(0);
 
   // digital xy axis 
   Joystick.setXAxis(0);

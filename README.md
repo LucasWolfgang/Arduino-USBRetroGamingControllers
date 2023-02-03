@@ -6,23 +6,13 @@ This project provides code so you can bring back to life your old controller wit
 This is the version 3.0 of the project 
 
 This project currently includes support for:
-* 
+* Classic Joystick
+* NES clones
+* Play Station 2
+* SEGA Master System
+* SEGA Mega Drive
+* SNES
 
-### Further Information:
-
-Commodore 64/Amiga, Atari 2600/XL/ST, ZX Spectrum, Amstrad CPC, MSX and many others compatible Joystick to USB - 
-https://jfrmilner.wordpress.com/2016/07/17/arduino-project-commodore-64amiga-atari-2600xlst-zx-spectrum-joystick-to-windowslinux-retropie-usb
-
-Sega Master System (SMS) Control Pad to USB - 
-https://jfrmilner.wordpress.com/2016/07/17/arduino-project-sega-master-system-sms-control-pad-to-windowslinux-retropie-usb/
-
-Sega MegaDrive/Genesis controller to USB - 
-https://jfrmilner.wordpress.com/2016/07/17/arduino-project-sega-megadrivegenesis-controller-to-windowslinux-retropie-usb/
-
-Super Nintendo Entertainment System (SNES) Controller/Gamepad to USB - 
-https://jfrmilner.wordpress.com/2016/07/17/arduino-project-super-nintendo-entertainment-system-snes-controllergamepad-to-windowslinux-retropie-usb/
-
----
 
 ## Multijoy Retro Gaming System
 With the above experience, I designed a circuit board and selector system so multiple controllers could all be connected and used on one system. The circuit board acts as a shield for an Arduino Micro that expands the available pins to make this possible. I created a quick demo of me playing popular games on this console with each controller. Check it out by clicking the below image.. 
